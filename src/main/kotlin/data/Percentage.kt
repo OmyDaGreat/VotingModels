@@ -7,9 +7,10 @@ package data
  * @constructor Creates a Percentage instance with the given value.
  * @throws IllegalArgumentException if the value is not between 0 and 100.
  */
-class Percentage(val value: Double) {
+class Percentage(var value: Double) {
   init {
-    require(value in 0.0..100.0) { "Percentage value must be between 0 and 100" }
+    value /= 100
+    require(value in 0.0..1.0) { "Percentage value must be between 0 and 100" }
   }
 
   /**
@@ -24,8 +25,8 @@ class Percentage(val value: Double) {
 
 /** Extension property to convert a Double to a Percentage. */
 val Double.pct: Percentage
-  get() = Percentage(this)
+  get() = Percentage(this / 100)
 
 /** Extension property to convert an Int to a Percentage. */
 val Int.pct: Percentage
-  get() = Percentage(this.toDouble())
+  get() = Percentage(this.toDouble() / 100)
