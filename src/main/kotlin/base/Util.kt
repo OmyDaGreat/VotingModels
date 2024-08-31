@@ -4,7 +4,6 @@ import data.Election
 import weka.core.Instances
 import weka.core.converters.ConverterUtils.DataSource
 import weka.filters.Filter
-import weka.filters.unsupervised.attribute.NumericToNominal
 import weka.filters.unsupervised.attribute.StringToNominal
 import java.io.File
 
@@ -70,19 +69,4 @@ fun convertToCSV(elections: List<Election>): String {
     }
 
   return header + rows
-}
-
-/**
- * Applies the NumericToNominal filter to the given data.
- *
- * @param data The Instances object to be filtered.
- * @return A new Instances object with the NumericToNominal filter applied.
- */
-fun applyNumericToNominalFilter(data: Instances): Instances {
-  return NumericToNominal()
-    .apply {
-      attributeIndices = "first"
-      setInputFormat(data)
-    }
-    .let { Filter.useFilter(data, it) }
 }
