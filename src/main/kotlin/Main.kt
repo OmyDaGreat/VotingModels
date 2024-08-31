@@ -1,10 +1,12 @@
 package io.github.omydagreat
 
 import data.data
-import randomForest.respond
+import weka.core.WekaPackageManager
 import java.io.File.separator
 
 fun main() {
+  WekaPackageManager.loadPackages(true)
   val filePath = "${System.getProperty("user.home")}${separator}VotingModels${separator}data.csv"
-  respond(data, filePath)
+  randomForest.respond(data, filePath)
+  regressionTree.respond(data, filePath)
 }

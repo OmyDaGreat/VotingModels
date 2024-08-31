@@ -122,6 +122,30 @@ val originalData = listOf(
     ),
     2, // The winner is the Center candidate with 30% of the votes and 30% of the secondary votes
   ),
+  Election(
+    listOf(
+      Candidate(-7, -3, 47.pct, 33.pct), // Lib Left candidate with 47% of the votes and 33% of the secondary votes
+      Candidate(3, -7, 28.pct, 47.pct), // Lib Center candidate with 28% of the votes and 47% of the secondary votes
+      Candidate(8, 2, 25.pct, 20.pct), // Center Right candidate with 25% of the votes and 20% of the secondary votes
+    ),
+    0, // The winner is the Lib Left candidate with 47% of the votes and 33% of the secondary votes
+  ),
+  Election(
+    listOf(
+      Candidate(-9, 9, 42.pct, 22.pct), // Auth Left candidate with 42% of the votes and 22% of the secondary votes
+      Candidate(1, 1, 21.pct, 42.pct), // Center candidate with 21% of the votes and 42% of the secondary votes
+      Candidate(9, -9, 37.pct, 36.pct), // Lib Right candidate with 37% of the votes and 36% of the secondary votes
+    ),
+    1, // The winner is the Center candidate with 37% of the votes and 36% of the secondary votes
+  ),
+  Election(
+    listOf(
+      Candidate(-6, 6, 33.pct, 33.pct), // Auth Left candidate with 33% of the votes and 33% of the secondary votes
+      Candidate(4, -6, 34.pct, 32.pct), // Lib Slightly Right candidate with 34% of the votes and 32% of the secondary votes
+      Candidate(2, 2, 33.pct, 35.pct), // Center candidate with 33% of the votes and 35% of the secondary votes
+    ),
+    1, // The winner is the Lib Slightly Right candidate with 34% of the votes and 32% of the secondary votes
+  ),
 )
 
 fun <T> List<T>.permutations(): List<List<T>> {
