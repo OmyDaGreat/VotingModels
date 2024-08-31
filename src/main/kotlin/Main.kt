@@ -1,7 +1,7 @@
 package io.github.omydagreat
 
 import data.data
-import decisionTree.respond
+import randomForest.respond
 import java.io.File.separator
 
 fun main() {
