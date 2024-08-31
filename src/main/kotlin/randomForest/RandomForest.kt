@@ -14,6 +14,7 @@ class RandomForest : Classifier {
     val data = loadData(csvFilePath)
     val filteredData = applyStringToNominalFilter(data)
     filteredData.setClassIndex(0)
+    println("=== Random Forest Classifier ===")
     println(buildClassifier(filteredData))
   }
 

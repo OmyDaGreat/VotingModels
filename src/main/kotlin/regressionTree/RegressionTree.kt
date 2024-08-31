@@ -14,6 +14,7 @@ class RegressionTree : Classifier {
     val data = loadData(csvFilePath)
     val filteredData = applyStringToNominalFilter(data)
     filteredData.setClassIndex(0)
+    println("=== Regression Tree Classifier ===")
     println(buildClassifier(filteredData))
   }
 

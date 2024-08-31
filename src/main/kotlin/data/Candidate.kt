@@ -8,9 +8,8 @@ package data
  * @property percentLiked The percentage of people who liked the candidate in primaries.
  * @property secondaryPercentLiked The percentage of people who liked the candidate in secondaries.
  */
-data class Candidate(
-  val econ: Int,
-  val social: Int,
-  val percentLiked: Percentage,
-  val secondaryPercentLiked: Percentage,
-)
+data class Candidate(val econ: Int, val social: Int, val percentLiked: Percentage, val secondaryPercentLiked: Percentage) {
+  override fun toString(): String {
+    return "Candidate(econ=$econ, social=$social, percentLiked=${percentLiked}, secondaryPercentLiked=$secondaryPercentLiked)"
+  }
+}
